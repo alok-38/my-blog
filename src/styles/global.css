@@ -3,6 +3,15 @@ html {
   font-family: sans-serif;
 }
 
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
+
 body {
   margin: 0 auto;
   width: 100%;
@@ -88,4 +97,19 @@ footer {
   color: white;
   text-align: center;
   padding: 0 0 30px 0;
+}
+
+button {
+  outline: none;
+  border: 0;
+  letter-spacing: 1.5px;
+  padding: 15px 45px;
+  background-color: #ff9776;
+  cursor: pointer;
+  color: #f1f5f9;
+}
+
+button:hover,
+button:focus {
+  background-color: #f57750;
 }
