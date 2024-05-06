@@ -80,3 +80,12 @@ h1 {
     display: none;
   }
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 0 0 30px 0;
+}
