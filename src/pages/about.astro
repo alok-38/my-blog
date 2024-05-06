@@ -1,7 +1,8 @@
 ---
-import "../styles/global.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+// import Header from "../components/Header.astro";
+// import Footer from "../components/Footer.astro";
+// import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "About Me";
 const identity = {
   firstName: "Alok",
@@ -63,8 +64,7 @@ const goal = 3;
     </style>
   </head>
   <body>
-    <Header />
-    <h1>{pageTitle}</h1>
+    <BaseLayout pageTitle={pageTitle} />
     <h2>... and my new Astro site!</h2>
 
     <p>
@@ -106,9 +106,5 @@ const goal = 3;
         <p>My goal is not {goal} days.</p>
       )
     }
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
   </body>
 </html>
