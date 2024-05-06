@@ -1,7 +1,4 @@
 ---
-// import Header from "../components/Header.astro";
-// import Footer from "../components/Footer.astro";
-// import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "About Me";
 const identity = {
@@ -64,47 +61,48 @@ const goal = 3;
     </style>
   </head>
   <body>
-    <BaseLayout pageTitle={pageTitle} />
-    <h2>... and my new Astro site!</h2>
+    <BaseLayout pageTitle={pageTitle}>
+      <h2>... and my new Astro site!</h2>
 
-    <p>
-      I am working through Astro's introductory tutorial. This is the second
-      page on my website, and it's the first one I built myself!
-    </p>
+      <p>
+        I am working through Astro's introductory tutorial. This is the second
+        page on my website, and it's the first one I built myself!
+      </p>
 
-    <p>
-      This site will update as I complete more of the tutorial, so keep checking
-      back and see how my journey is going!
-    </p>
-    <p>Here are a few facts about me:</p>
-    <ul>
-      <li>My name is {identity.firstName}.</li>
-      <li>
-        I live in {identity.country} and I aspire to work as a {
-          identity.occupation
-        }.
-      </li>
-    </ul>
-    <p>My skills are:</p>
-    <ul>
+      <p>
+        This site will update as I complete more of the tutorial, so keep
+        checking back and see how my journey is going!
+      </p>
+      <p>Here are a few facts about me:</p>
+      <ul>
+        <li>My name is {identity.firstName}.</li>
+        <li>
+          I live in {identity.country} and I aspire to work as a {
+            identity.occupation
+          }.
+        </li>
+      </ul>
+      <p>My skills are:</p>
+      <ul>
+        {
+          skills.map((skill, index) => (
+            <span class="skill">
+              <a href={skill.link} target="_blank" rel="noopener noreferrer">
+                <img src={skill.logo} alt={skill.name} width="36" height="36" />
+              </a>
+            </span>
+          ))
+        }
+      </ul>
+      {happy && <p>I am happy to be learning Astro!</p>}
+      {finished && <p>I finished this tutorial!</p>}
       {
-        skills.map((skill, index) => (
-          <span class="skill">
-            <a href={skill.link} target="_blank" rel="noopener noreferrer">
-              <img src={skill.logo} alt={skill.name} width="36" height="36" />
-            </a>
-          </span>
-        ))
+        goal === 3 ? (
+          <p>My goal is to finish in {goal} days.</p>
+        ) : (
+          <p>My goal is not {goal} days.</p>
+        )
       }
-    </ul>
-    {happy && <p>I am happy to be learning Astro!</p>}
-    {finished && <p>I finished this tutorial!</p>}
-    {
-      goal === 3 ? (
-        <p>My goal is to finish in {goal} days.</p>
-      ) : (
-        <p>My goal is not {goal} days.</p>
-      )
-    }
+    </BaseLayout>
   </body>
 </html>
