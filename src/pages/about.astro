@@ -8,14 +8,36 @@ const identity = {
 };
 
 const skills = [
-  { name: "HTML", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-  { name: "CSS", link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  {
+    name: "HTML",
+    link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    logo: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg",
+  },
+  {
+    name: "CSS",
+    link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    logo: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg",
+  },
   {
     name: "JavaScript",
     link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    logo: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg",
   },
-  { name: "Astro", link: "https://astro.build/" },
-  { name: "Next.js", link: "https://nextjs.org/" },
+  {
+    name: "Astro",
+    link: "https://astro.build/",
+    logo: "https://raw.githubusercontent.com/github/explore/5cc0a03a302ec862c4aeac2a22a513ae31c35432/topics/astro/astro.png",
+  },
+  {
+    name: "Next.js",
+    link: "https://nextjs.org/",
+    logo: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nextjs-colored.svg",
+  },
+  {
+    name: "Git",
+    link: "https://git-scm.com/",
+    logo: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg",
+  },
 ];
 
 const happy = true;
@@ -62,14 +84,20 @@ const goal = 3;
         skills.map((skill) => (
           <li>
             <a href={skill.link} target="_blank" rel="noopener noreferrer">
-              {skill.name}
+              <img src={skill.logo} alt={skill.name} width="36" height="36" />
             </a>
           </li>
         ))
       }
     </ul>
-	{happy && <p>I am happy to be learning Astro!</p>}
-	{finished && <p>I finished this tutorial!</p>}
-	{goal === 3 ? <p>My goal is to finish in {goal} days.</p> : <p>My goal is not {goal} days.</p>}
+    {happy && <p>I am happy to be learning Astro!</p>}
+    {finished && <p>I finished this tutorial!</p>}
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in {goal} days.</p>
+      ) : (
+        <p>My goal is not {goal} days.</p>
+      )
+    }
   </body>
 </html>
