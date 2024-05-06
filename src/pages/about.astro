@@ -1,6 +1,7 @@
 ---
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 const pageTitle = "About Me";
 const identity = {
   firstName: "Alok",
@@ -105,5 +106,6 @@ const goal = 3;
         <p>My goal is not {goal} days.</p>
       )
     }
+    <Footer />
   </body>
 </html>
